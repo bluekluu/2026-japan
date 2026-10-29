@@ -449,7 +449,7 @@ document.getElementById('copyBtn').addEventListener('click',()=>{const lines=['J
     header.addEventListener('click',toggle);
     header.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}});
   }
-  const expandHashDay=()=>{const id=decodeURIComponent(location.hash.slice(1));if(!/^d\\d+$/.test(id))return;const card=document.getElementById(id);if(card&&card.matches('article.day-card')){card.classList.remove('is-collapsed');card.querySelector('.day-header')?.setAttribute('aria-expanded','true');}};
+  const expandHashDay=()=>{const id=decodeURIComponent(location.hash.slice(1));if(!/^d\d+$/.test(id))return;const card=document.getElementById(id);if(card&&card.matches('article.day-card')){card.classList.remove('is-collapsed');card.querySelector('.day-header')?.setAttribute('aria-expanded','true');}};
   document.addEventListener('click',e=>{const link=e.target.closest('a[href^="#d"]');if(!link)return;const card=document.getElementById(link.getAttribute('href').slice(1));if(card&&card.matches('article.day-card')){card.classList.remove('is-collapsed');card.querySelector('.day-header')?.setAttribute('aria-expanded','true');}});
   window.addEventListener('hashchange',expandHashDay);expandHashDay();
 })();
